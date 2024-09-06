@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZAY의 월간 게임시간</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background-color: #1e1e1e; 
+            color: #ffffff; 
+            margin: 0; 
+        }
+        .container {
+            text-align: center; 
+            background: #2d2d2d; 
+            padding: 40px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #time-display {
+            font-size: 3em; 
+            margin: 20px 0; 
+            color: #00ff99;
+        }
+        input, button {
+            padding: 10px 20px; 
+            margin: 5px; 
+            font-size: 1em; 
+            border: none; 
+            border-radius: 5px;
+        }
+        input {
+            width: 60px; 
+            text-align: center; 
+        }
+        button {
+            background-color: #0078d7; 
+            color: white; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005a9e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ZZAY의 월간 게임시간</h1>
+        <div>
+            <label for="available-time">남은 월간 게임시간: </label>
+            <span id="available-time-display">0</span> 분
+        </div>
+        <div>
+            <label for="set-time">이번엔 몇 분 할 거야?: </label>
+            <input type="number" id="set-time" min="1" value="60">
+            <button id="start-stop-btn" onclick="toggleStopwatch()">Start</button>
+        </div>
+        <div id="time-display">00:00:00</div>
+    </div>
+
+    <audio id="end-sound" src="end-sound.mp3"></audio> <!-- 종료 알림 소리 파일 -->
+    <script src="script.js"></script>
+</body>
+</html>
